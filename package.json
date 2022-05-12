@@ -1,0 +1,27 @@
+{
+    "name": "@ablaise/yamaha-eseq-converter",
+    "version": "1.0.0",
+    "description": "Yamaha E-Seq Converter is a ES6 JavaScript tool that helps to convert a midi file into the Yamaha's standard E-Seq format",
+    "license": "MIT",
+    "author": "Alexis Blaise <blaise.alexis@gmail.com>",
+    "keywords": [
+        "yamaha",
+        "eseq",
+        "smartpianist",
+        "piano",
+        "clavinova",
+        "midi"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ablaise/yamaha-eseq-converter.git"
+    },
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.17.10",
+        "babel-jest": "^28.1.0",
+        "jest": "^28.1.0"
+    }
+}
