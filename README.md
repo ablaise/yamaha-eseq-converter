@@ -41,7 +41,8 @@ import Utils from "@ablaise/yamaha-eseq-converter/lib/Utils";
 
 const midi = new Midi({
     autorun: true,
-    path: './path/to/file.mid'
+    path: './path/to/file.mid',
+    //buffer: new ArrayBuffer(...) // or "buffer" option if you prefer to work with ArrayBuffer
 });
 
 /**
@@ -72,7 +73,8 @@ window.addEventListener(Midi.EVENT_ID, (event) => {
  * Downloads the output midi file.
  */
 window.addEventListener(Midi.EVENT_READY, (event) => {
-    const header = midi.getHeader();
+    const data = event.data;
+    const header = data.context.getHeader();
     if (0 === header.getType()) {
         throw 'Invalid midi type.';
     }
