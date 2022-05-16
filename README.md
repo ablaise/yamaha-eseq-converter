@@ -83,6 +83,27 @@ window.addEventListener(Midi.EVENT_READY, (event) => {
 });
 ```
 
+You can also use a callback instead of the `EVENT_READY` event.
+
+```javascript
+import Midi from "@ablaise/yamaha-eseq-converter/lib/Midi";
+import Utils from "@ablaise/yamaha-eseq-converter/lib/Utils";
+
+const midi = new Midi({
+    autorun: true,
+    path: './path/to/file.mid',
+    //buffer: new ArrayBuffer(...) // or "buffer" option if you prefer to work with ArrayBuffer
+}, (data) => {
+    const context = data.context;
+    const header = context.getHeader();
+    if (0 === header.getType()) {
+        throw 'Invalid midi type.';
+    }
+
+    // ...
+});
+```
+
 ## Running tests
 
 Yamaha E-Seq Converter uses the [Jest Javascript testing framework](https://jestjs.io). You can run them using the following command.

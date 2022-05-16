@@ -1,6 +1,6 @@
 {
     "name": "@ablaise/yamaha-eseq-converter",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Yamaha E-Seq Converter is a ES6 JavaScript tool that helps to convert a midi file into the Yamaha's standard E-Seq format",
     "license": "MIT",
     "author": "Alexis Blaise <blaise.alexis@gmail.com>",
