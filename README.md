@@ -63,7 +63,7 @@ window.addEventListener(Midi.EVENT_ID, (event) => {
                 console.warn('Unhandled channel.')
                 break;
         }
-        
+
         // update the byte ID with the expected channel
         data.dv.setUint8(data.offset, Utils.setChannel(data.id, track));
     }

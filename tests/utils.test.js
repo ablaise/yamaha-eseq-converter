@@ -1,12 +1,11 @@
 import Utils from "../lib/Utils";
-import NoteOffEvent from "../lib/Event/NoteOffEvent";
-import PitchBendEvent from "../lib/Event/PitchBendEvent";
-import SystemExclusiveEvent from "../lib/Event/SystemExclusiveEvent";
-import NoteOnEvent from "../lib/Event/NoteOnEvent";
-import PolyphonicKeyPressureEvent from "../lib/Event/PolyphonicKeyPressureEvent";
-import ControllerEvent from "../lib/Event/ControllerEvent";
-import InstrumentChangeEvent from "../lib/Event/InstrumentChangeEvent";
-import ChannelPressureEvent from "../lib/Event/ChannelPressureEvent";
+import NoteOff from "../lib/Message/Channel/Voice/NoteOff";
+import NoteOn from "../lib/Message/Channel/Voice/NoteOn";
+import PolyphonicKeyPressure from "../lib/Message/Channel/Voice/PolyphonicKeyPressure";
+import ControlChange from "../lib/Message/Channel/Voice/ControlChange";
+import InstrumentChange from "../lib/Message/Channel/Voice/InstrumentChange";
+import ChannelPressure from "../lib/Message/Channel/Voice/ChannelPressure";
+import PitchBend from "../lib/Message/Channel/Voice/PitchBend";
 
 describe('Midi tests suite', function () {
     const vlqDataSet = [
@@ -16,15 +15,13 @@ describe('Midi tests suite', function () {
     ];
 
     const eventsDataSet = [
-        {data: 0x80, event: NoteOffEvent.EVENT_ID},
-        {data: 0x90, event: NoteOnEvent.EVENT_ID},
-        {data: 0xA0, event: PolyphonicKeyPressureEvent.EVENT_ID},
-        {data: 0xB0, event: ControllerEvent.EVENT_ID},
-        {data: 0xC0, event: InstrumentChangeEvent.EVENT_ID},
-        {data: 0xD0, event: ChannelPressureEvent.EVENT_ID},
-        {data: 0xE0, event: PitchBendEvent.EVENT_ID},
-        {data: 0xF0, event: SystemExclusiveEvent.EVENT_ID},
-        //{data: 0xFF, event: MetaEvent.ID},
+        {data: 0x80, event: NoteOff.EVENT_ID},
+        {data: 0x90, event: NoteOn.EVENT_ID},
+        {data: 0xA0, event: PolyphonicKeyPressure.EVENT_ID},
+        {data: 0xB0, event: ControlChange.EVENT_ID},
+        {data: 0xC0, event: InstrumentChange.EVENT_ID},
+        {data: 0xD0, event: ChannelPressure.EVENT_ID},
+        {data: 0xE0, event: PitchBend.EVENT_ID}
     ];
 
     it('should have a correct length', function () {
